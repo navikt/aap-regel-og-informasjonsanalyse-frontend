@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-block: 2rem;
+    margin-inline: 5rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
