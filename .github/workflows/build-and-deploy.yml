@@ -17,6 +17,8 @@ jobs:
       appname: 'aap-regelverk'
       playwright: false
       cdn: false
+      appsecrets: |
+        SANITY_TOKEN=${{ secrets.SANITY_TOKEN }}
 
   deployDev:
     needs: buildDev
