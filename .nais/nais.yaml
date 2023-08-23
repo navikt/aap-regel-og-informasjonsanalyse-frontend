@@ -31,6 +31,13 @@ spec:
   observability:
     tracing:
       enabled: true
+  envFrom:
+    - secret: regelverk-env-local
+  accessPolicy:
+    outbound:
+      external:
+        - host: api.sanity.io
+        - host: cdn.sanity.io
   ingresses:
   {{#each ingresses as |url|}}
     - {{url}}
