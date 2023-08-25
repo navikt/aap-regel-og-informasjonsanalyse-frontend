@@ -31,9 +31,8 @@ spec:
   observability:
     tracing:
       enabled: true
-  filesFrom:
-    - mountPath: /app
-      secret: regelverk-env-local
+  envFrom:
+    - secret: regelverk-env-local
   accessPolicy:
     outbound:
       external:
