@@ -10,11 +10,6 @@ const nextConfig = {
     experimental: {
       instrumentationHook: true,
     },
-  
-    i18n: {
-      locales: ['nb'],
-      defaultLocale: 'nb',
-    },
   };
   
   module.exports = nextConfig;
