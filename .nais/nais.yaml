@@ -33,6 +33,10 @@ spec:
       enabled: true
   envFrom:
     - secret: regelverk-env-local
+  filesFrom:
+    - emptyDir:
+        medium: Memory
+      mountPath: /app/.next/cache
   accessPolicy:
     outbound:
       external:
