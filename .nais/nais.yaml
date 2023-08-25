@@ -41,6 +41,9 @@ spec:
     outbound:
       external:
         - host: api.sanity.io
+        - host: ib5361g9.api.sanity.io
+        - host: apicdn.sanity.io
+        - host: ib5361g9.apicdn.sanity.io
         - host: cdn.sanity.io
   ingresses:
   {{#each ingresses as |url|}}
