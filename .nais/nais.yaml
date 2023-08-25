@@ -32,7 +32,7 @@ spec:
     tracing:
       enabled: true
   filesFrom:
-    - mountPath: /app/.env.local
+    - mountPath: /app
       secret: regelverk-env-local
   accessPolicy:
     outbound:
