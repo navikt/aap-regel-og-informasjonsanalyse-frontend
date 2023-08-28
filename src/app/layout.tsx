@@ -15,11 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  if (process.env.SANITY_API_TOKEN) {
-    console.log('SANITY_API_TOKEN is set');
-  } else {
-    console.log('SANITY_API_TOKEN is not set');
-  }
   const menuItems = await client.fetch(
     `
       {
