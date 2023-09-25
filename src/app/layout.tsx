@@ -4,10 +4,7 @@ import styles from './layout.module.css';
 import { Link } from '@navikt/ds-react/esm/link';
 import type { Metadata } from 'next';
 import NextLink from 'next/link';
-import { Inter } from 'next/font/google';
 import { client } from '@/sanity/clients';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'AAP Regel og informasjonsanalyse',

@@ -1,12 +1,8 @@
-import { client } from "@/sanity/clients";
-import { Heading } from "@navikt/ds-react/esm/typography";
-import { PortableText } from "@portabletext/react";
+import { client } from '@/sanity/clients';
+import { Heading } from '@navikt/ds-react/esm/typography';
+import { PortableText } from '@portabletext/react';
 
-export default async function Paragraph({
-  params,
-}: {
-  params: { chapter: string; paragraph: string };
-}) {
+export default async function Paragraph({ params }: { params: { chapter: string; paragraph: string } }) {
   const paragraph = await client.fetch(
     `*[_type == "paragraph" && paragraph == ${params.paragraph}][0]{
             paragraph,
@@ -37,12 +33,9 @@ export default async function Paragraph({
         return (
           <div key={ledd._id}>
             <Heading level="2" size="medium" spacing>
-              {ledd.paragraphPartWithoutLetters}. ledd,{" "}
-              {ledd.paragraphPartWithoutLettersShortName}
+              {ledd.paragraphPartWithoutLetters}. ledd, {ledd.paragraphPartWithoutLettersShortName}
             </Heading>
-            <div
-              style={{ borderLeft: "1px solid gray", paddingLeft: "0.5rem" }}
-            >
+            <div style={{ borderLeft: '1px solid gray', paddingLeft: '0.5rem' }}>
               <PortableText value={ledd.content} />
             </div>
             {ledd.decisions?.length > 0 && (
@@ -56,13 +49,9 @@ export default async function Paragraph({
                       <b>{decision.paragraphPartDecision}</b>
                       <p>Informasjonsgrunnlag:</p>
                       <ul>
-                        {decision.relevantInfoElements?.map(
-                          (infoElement: any) => (
-                            <li key={infoElement._id}>
-                              {infoElement.infoElement}
-                            </li>
-                          )
-                        )}
+                        {decision.relevantInfoElements?.map((infoElement: any) => (
+                          <li key={infoElement._id}>{infoElement.infoElement}</li>
+                        ))}
                       </ul>
                     </li>
                   ))}
